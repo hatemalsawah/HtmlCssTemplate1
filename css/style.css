@@ -10,6 +10,9 @@ body{
 }
 :root{
     --main-color:#10cab7;
+    --secondary-color:#2c4755;
+    --section-padding:60px;
+    --section-background:#f6f6f6;
 }
 .container{
     padding-left: 15px;
@@ -41,6 +44,36 @@ body{
 }
 /* ------------------End General Roles---------------------------------------- */
 
+
+/* solid components */
+.special-heading{
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+
+}
+.special-heading + p{
+    margin: -30px 0 0 ;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+@media (max-width:767px) {
+    .special-heading{
+        font-size: 60px;
+    }
+    .special-heading + p{
+        margin-top: -20px;
+    }
+    
+}
+
+
+
+/* ==================== */
 
 /* Start Header */
 
@@ -87,7 +120,7 @@ body{
 }
 .header .links ul{
     list-style: none;
-    background-color: #f6f6f6;
+    background-color:var(--section-background);
     margin: 0;
     padding: 0;
     position: absolute;
@@ -161,9 +194,9 @@ body{
 
 /*   S t a r t  F e a t u r  e   S e c t i o n     */
 .features{
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background-color: #f6f6f6;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
 }
 .features .container{
     display: grid;
@@ -188,3 +221,170 @@ body{
     font-size: 17px;
 }
  /* E n d     F e a t u r e    S e c t i o n    */
+ /* start      s e r v i c e s   S e c t i o n    */
+
+
+
+.services{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px,1fr));
+    gap: 30px;
+    margin-top: 100px;
+}
+.services .srv{
+    display: flex;
+    margin-bottom: 40px;
+
+}
+@media (max-width:767px) {
+    .services .srv{
+        flex-direction: column;
+        text-align: center;
+    }
+    
+}
+.services .services-content .srv i{
+    color: var(--main-color);
+    flex-basis: 60px;
+    font-size: 30px;
+
+}
+.services .services-content .srv .text{
+    flex: 1;
+}
+.services .services-content .srv .text h3{
+    margin: 0 0 20px;
+}
+.services .services-content .srv .text p{
+    color: #444;
+    font-weight: 300;
+    line-height: 1.7;
+}
+.services .services-content .image{
+    text-align: center;
+    position: relative;
+}
+.services .services-content .image::before{
+   content: "";
+   position: absolute;
+   right: 0;
+   background-color: var(--secondary-color);
+   width: 130px;
+   height:calc(100% + 80px);
+   top: -50px;
+   z-index: -1;
+   
+}
+.services .services-content .image img{
+   width: 260px;
+}
+@media (max-width:1199px) {
+    .hide-img{
+        display: none;
+    }
+    
+}
+
+ /* E n d     services    */
+ /* start     portfolio    */
+
+.Portfolio{
+padding-top: var(--section-padding);
+padding-bottom: var(--section-padding);
+background-color: var(--section-background);
+
+}
+.Portfolio .Portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 80px;
+}
+.Portfolio .Portfolio-content .card{
+    background-color: white;
+
+}
+.Portfolio .Portfolio-content .card img{
+    max-width: 100%;
+}
+
+.Portfolio .Portfolio-content .card .info{
+    padding: 20px;
+}
+.Portfolio .Portfolio-content .card .info h3{
+    margin: 0;
+}
+.Portfolio .Portfolio-content .card .info p{
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+ /* E n d     portfolio    */
+
+ /*  start ABout  */
+.About{
+    padding-top: var(--section-padding);
+    padding-bottom: calc(var(--section-padding) + 60px);
+}
+.About .about-content{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.About .about-content .image{
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+.About .about-content .image img{
+   max-width: 100%;
+}
+.About .about-content .image::before{
+    
+    content:'';
+    position: absolute;
+    background-color: #ebeced;
+    width: 120px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+.About .about-content .image::after{
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    z-index: -1;
+    right: -150px;
+    top: -40px;
+
+}
+.About .about-content .text{
+    flex-basis: calc(100% - 500px);
+}
+.About .about-content .text p:first-of-type{
+    
+}
+.About .about-content .text hr{
+
+}
+.About .about-content .text p:last-of-type{
+
+}
+
+
+
+
+
+
+ /* End About */
